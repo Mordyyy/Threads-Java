@@ -15,7 +15,25 @@ public class Transaction {
 		this.amount = amount;
 	}
 
+	public int getAmount(){
+   		return amount;
+	}
+
+	public int getFrom(){
+   		return from;
+	}
+
+	public int getTo(){
+   		return to;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Transaction trans = (Transaction)obj;
+		return trans.getFrom() == from && trans.getTo() == to && trans.getAmount() == amount;
+	}
+
 	public String toString() {
-		return("from:" + from + " to:" + to + " amt:" + amount);
+		return("from:" + from + " to:" + to + " amount:" + amount);
 	}
 }

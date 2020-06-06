@@ -20,5 +20,29 @@ public class Account {
 		this.balance = balance;
 		transactions = 0;
 	}
-	
+
+	public Account(int id, int balance){
+		this.id = id;
+		this.balance = balance;
+		transactions = 0;
+	}
+
+	public int getBalance(){
+		return balance;
+	}
+	public int getTransactions(){
+		return transactions;
+	}
+
+	public synchronized void makeTransaction(int amount){
+		transactions++;
+		balance += amount;
+	}
+
+
+
+	@Override
+	public synchronized String toString() {
+		return "id: " + id + " Current balance: " + balance + " Transactions number: " + transactions;
+	}
 }
